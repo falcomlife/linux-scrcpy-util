@@ -24,6 +24,7 @@ do
   else
     echo "get phone ip fail" >> /home/sorawingwind/.scrcpy/daemon.log
     echo "end" >> /home/sorawingwind/.scrcpy/daemon.log
+    continue
   fi
   device=`adb devices | grep 8888`
   displaycount=$(ps -ef | grep scrcpy | grep -v scrcpyd | grep -v grep | wc -l)
@@ -40,7 +41,7 @@ do
   # if there is scrcpy process execute, enter next turn
   if [ $display = true ] ; then 
     echo "device "$device" is already connected" >> /home/sorawingwind/.scrcpy/daemon.log
-    echo "get phone ip fail" >> /home/sorawingwind/.scrcpy/daemon.log
+    continue
   fi
 
 
