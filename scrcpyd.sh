@@ -61,7 +61,7 @@ do
   # open scrcpy 
   echo "ready to connect scrcpy" >> /home/sorawingwind/.scrcpy/daemon.log
   if [ $connect = true ] ; then
-    nohup scrcpy --window-x 1550 --window-y 250 --window-height 800 --window-borderless >> /home/sorawingwind/.scrcpy/daemon.log 2>&1 &
+    nohup scrcpy --bit-rate 2M --max-size 800 --window-x 1550 --window-y 250 --window-borderless >> /home/sorawingwind/.scrcpy/daemon.log 2>&1 &
     display=true
     connect=false
   fi
